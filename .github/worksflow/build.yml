@@ -1,4 +1,4 @@
-name: Build and analyze
+name: Build and Analyze
 
 on:
   push:
@@ -9,11 +9,11 @@ on:
 
 jobs:
   build:
-    name: Build and analyze
+    name: Build and Analyze
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Set up Node.js
@@ -21,14 +21,14 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
 
-      - name: Run SonarCloud Scan
+      - name: Run SonarCloud Analysis
         run: npx sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_PROJECT_KEY: your-sonarcloud-project-key
-          SONAR_ORGANIZATION: your-sonarcloud-organization
+          SONAR_TOKEN: ${{ secrets.d6fd8c2119494867664eb484935317e6f53b0163}}
+          SONAR_PROJECT_KEY: Srinithimahalakshmi_message-app-
+          SONAR_ORGANIZATION: Srinithimahalakshmi
           SONAR_HOST_URL: https://sonarcloud.io
